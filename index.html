@@ -4,90 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JOMPO</title>
-  <meta name="google-site-verification" content="google468fece0c28e263e" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f9f4;
+    body { font-family: 'Segoe UI', sans-serif; background-color: #f4f9f4; }
+    .navbar { background-color: #2e7d32; }
+    .navbar-nav .nav-link { color: white !important; font-weight: 600; padding: 10px 15px; }
+    .navbar-nav .nav-link:hover { text-decoration: underline; }
+    .navbar-nav .nav-item.dropdown:hover .dropdown-menu { display: block; }
+    
+    /* Carousel hero styling */
+    .carousel-item {
+      height: 80vh;
+      min-height: 400px;
+      background-size: cover;
+      background-position: center center;
+      position: relative;
     }
-    .navbar {
-      background-color: #2e7d32;
+    .carousel-caption {
+      bottom: 40%;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
     }
-    .navbar-nav a {
-      color: white !important;
-      font-weight: bold;
-    }
-    .navbar-nav a:hover {
-      text-decoration: underline;
-    }
-    .main-section {
-      padding: 50px 20px;
-    }
-    footer {
-      background-color: #2e7d32;
-      color: white;
-      padding: 30px 20px;
-    }
-    footer a {
-      color: #ffffff;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-    .social-icons a {
-      color: white;
-      font-size: 20px;
-      margin: 0 10px;
-    }
-    .social-icons a:hover {
-      color: #ffeb3b;
-    }
-    footer {
-  background-color: #2e7d32;
-  color: white;
-  padding: 30px 20px;
-  margin-top: 40px;
-}
-footer a {
-  color: #ffffff;
-  text-decoration: none;
-  margin: 0 8px;
-  font-weight: bold;
-}
-footer a:hover {
-  text-decoration: underline;
-  color: #ffeb3b;
-}
-.social-icons a {
-  color: white;
-  font-size: 20px;
-  margin: 0 10px;
-}
-.social-icons a:hover {
-  color: #ffeb3b;
-}
-.navbar-nav .nav-link {
-  padding: 8px 15px;
-}
-.navbar-nav .nav-link.active {
-  background-color: #1b5e20;
-  border-radius: 5px;
-}
+    .carousel-caption h1 { font-size: 3rem; font-weight: bold; }
+    .carousel-caption p { font-size: 1.2rem; margin-bottom: 20px; }
+    .btn-cta { background-color: #ffeb3b; color: #2e7d32; font-weight: bold; padding: 10px 25px; border-radius: 50px; }
+    .btn-cta:hover { background-color: #fdd835; color: #1b5e20; }
 
+    footer { background-color: #2e7d32; color: white; padding: 30px 20px; margin-top: 40px; }
+    footer a { color: #ffffff; text-decoration: none; margin: 0 8px; font-weight: bold; }
+    footer a:hover { color: #ffeb3b; text-decoration: underline; }
+    .social-icons a { color: white; font-size: 20px; margin: 0 10px; }
+    .social-icons a:hover { color: #ffeb3b; }
   </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#2e7d32;">
-  <div class="container-fluid">
+  
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
     <a class="navbar-brand fw-bold" href="index.html">JOMPO</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -97,43 +54,92 @@ footer a:hover {
         <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
         <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
         <li class="nav-item"><a class="nav-link" href="community.html">Community</a></li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Shop</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="shop.html">Shop Products</a></li>
+            <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Info</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+            <li><a class="dropdown-item" href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+          </ul>
+        </li>
+
         <li class="nav-item"><a class="nav-link" href="dream.html">Dream Soccer</a></li>
-        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-        <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         <li class="nav-item"><a class="nav-link" href="kpi.html">KPI</a></li>
-        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link" href="privacypolicy.html">Privacy</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
+<!-- Hero Carousel with Fade & Indicators -->
+<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
 
-  <section class="main-section text-center">
-    <div class="container">
-      <h1 class="text-success">Welcome to JOMPO Digital Solutions</h1>
-      <p class="lead">Empowering agriculture, technology, and green energy innovation.</p>
+  <div class="carousel-inner">
+    <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1581092915307-15f362bc227d?auto=format&fit=crop&w=1600&q=80');">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>Empowering Agriculture</h1>
+        <p>Innovative solutions for sustainable farming and growth.</p>
+        <a href="projects.html" class="btn btn-cta">Explore Projects</a>
+      </div>
     </div>
-  </section>
+    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1590073241193-cd569da5aa4e?auto=format&fit=crop&w=1600&q=80');">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>Technology & Innovation</h1>
+        <p>Leveraging tech to drive efficiency and impact.</p>
+        <a href="resources.html" class="btn btn-cta">Learn More</a>
+      </div>
+    </div>
+    <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1586075480495-27c63f73a51f?auto=format&fit=crop&w=1600&q=80');">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>Green Energy Solutions</h1>
+        <p>Promoting renewable energy and environmental sustainability.</p>
+        <a href="community.html" class="btn btn-cta">Join Us</a>
+      </div>
+    </div>
+  </div>
 
-  <footer class="text-center">
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<footer class="text-center">
   <div class="mb-2">
     <a href="faq.html">FAQ</a> |
     <a href="privacypolicy.html">Privacy Policy</a> |
     <a href="contact.html">Contact</a>
   </div>
   <div class="social-icons mb-2">
-    <a href="https://www.facebook.com/JOMPO Digital Solutions" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f" style="color: blue;"></i></a>
-    <a href="https://twitter.com/jompodigital" aria-label="Twitter" target="_blank"><i class="fab fa-x-twitter" style="color: black;"></i></a>
-    <a href="https://wa.me/254795884562" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.youtube.com/@JOMPODigitalSolutions" aria-label="YouTube" target="_blank"><i class="fab fa-youtube" style="color: red;"></i></a>
-    <a href="https://www.linkedin.com/company/jompo-digital-solutions" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in" style="color: blue;"></i></a>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
   </div>
   <p>Contact: <a href="mailto:maxwelogweno098@gmail.com">maxwelogweno098@gmail.com</a></p>
   <p>&copy; 2025 JOMPO Digital Solutions</p>
 </footer>
-  
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
