@@ -87,30 +87,57 @@
   </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="index.html">JOMPO</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#2e7d32;">
+  <div class="container flex-column align-items-center">
+
+    <!-- Logo Placeholder -->
+    <div class="mb-2">
+      <img src="your-logo.png" alt="JOMPO Logo" style="height:80px;">
+    </div>
+
+    <!-- Brand Name -->
+    <a class="navbar-brand mb-3" href="#" style="font-size: 2rem; font-weight: bold;">
+      JOMPO
+    </a>
+
+    <!-- Navbar Toggler for Mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto text-center">
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav flex-wrap justify-content-center">
+
         <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
         <li class="nav-item"><a class="nav-link" href="community.html">Community</a></li>
-        <li class="nav-item"><a class="nav-link" href="dream.html">Dream Soccer</a></li>
-        <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-        <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <li class="nav-item"><a class="nav-link" href="kpi.html">KPI</a></li>
-        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link" href="privacypolicy.html">Privacy</a></li>
+
+        <!-- Dropdown for Extra Pages -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            More
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="moreDropdown">
+            <li><a class="dropdown-item" href="dream.html">Dream Soccer</a></li>
+            <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
+            <li><a class="dropdown-item" href="kpi.html">KPI</a></li>
+            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+            <li><a class="dropdown-item" href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a class="dropdown-item" href="resources.html">Resources</a></li>
+          </ul>
+        </li>
+
       </ul>
     </div>
   </div>
 </nav>
+
 
 <section class="hero">
   <div class="container">
