@@ -55,6 +55,24 @@
       border-radius: 8px;
       margin-top: 10px;
     }
+    /* Limit Cassava images without affecting other projects */
+.project img[src*="Leaves"], 
+.project img[src*="Leaves to juice"], 
+.project img[src*="Stem"], 
+.project img[src*="Processing"], 
+.project img[src*="Processing1"], 
+.project img[src*="Tubers"], 
+.project img[src*="Cassava plant"], 
+.project img[src*="Small plant"], 
+.project img[src*="Small plant1"], 
+.project img[src*="Processing3"] {
+    max-width: 48%;  /* keeps 2 images per row nicely */
+    margin-right: 2%;
+    margin-bottom: 15px;
+    display: inline-block;
+    vertical-align: top;
+}
+
   </style>
 </head>
 <body>
