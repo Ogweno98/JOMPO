@@ -179,6 +179,21 @@
   font-size: 1rem;
 }
 
+    /* Logo Styling */
+.logo {
+  height: 80px;           /* default height */
+  width: auto;            /* maintain aspect ratio */
+  max-width: 200px;       /* prevents it from getting too big on large screens */
+}
+
+/* Adjust logo size on smaller screens */
+@media (max-width: 768px) {
+  .logo {
+    height: 60px;         /* smaller height for mobile */
+    max-width: 150px;
+  }
+}
+
   </style>
 </head>
 <body>
