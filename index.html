@@ -179,22 +179,31 @@
   font-size: 1rem;
 }
 
- /* Make logo round */
+ /* Make logo perfectly round */
 .logo {
-  height: 80px;       /* default height */
-  width: 80px;        /* make it a square so border-radius works perfectly */
-  object-fit: cover;  /* ensures the image fills the square without distortion */
-  border-radius: 50%; /* makes it fully round */
-  border: 2px solid #ffffff; /* optional: adds a white border for better visibility */
+  width: 80px;             /* square width */
+  height: 80px;            /* square height */
+  border-radius: 50%;      /* makes it round */
+  object-fit: cover;       /* fills the square without distortion */
+  display: block;
+  border: 2px solid #ffffff; /* optional white border */
+  margin: 0 auto;          /* centers logo if needed */
 }
 
 /* Adjust for smaller screens */
 @media (max-width: 768px) {
   .logo {
-    height: 60px;
     width: 60px;
+    height: 60px;
   }
 }
+
+/* Optional: reduce navbar height */
+.navbar .container {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 
 
 
