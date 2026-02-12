@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JOMPO</title>
+
+  <!-- Bootstrap & FontAwesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f9f4;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar/Header */
+    .navbar {
+      background-color: #2e7d32;
+      padding: 0.5rem 1rem;
+    }
+    .navbar a {
+      color: white !important;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+    .navbar-brand {
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+    }
+    .navbar img {
+      height: 50px;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      color: white;
+      padding: 100px 20px 60px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 70vh;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+    }
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 15px;
+      color: #fff;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+    }
+
+    /* Features Section */
+    .features {
+      padding: 60px 20px;
+    }
+    .feature-box {
+      border-radius: 15px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: all 0.4s ease;
+      height: 100%;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+    }
+    .feature-box i {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+    .feature-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    /* Gradient backgrounds for feature boxes */
+    .feature-agriculture { background: linear-gradient(135deg, #43a047, #66bb6a); }
+    .feature-energy { background: linear-gradient(135deg, #fdd835, #ffeb3b); color: #2e7d32; }
+    .feature-tech { background: linear-gradient(135deg, #42a5f5, #64b5f6); }
+    .feature-community { background: linear-gradient(135deg, #ab47bc, #ce93d8); }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #2e7d32, #1b5e20);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+    footer a:hover {
+      color: #ffeb3b;
+    }
+    .social-icons a {
+      color: white;
+      font-size: 22px;
+      margin: 0 10px;
+    }
+    .social-icons a:hover {
+      color: #ffeb3b;
+    }
+
+    /* Open App Button */
+    .open-app-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ffeb3b;
+      color: #2e7d32;
+      font-weight: bold;
+      padding: 15px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    .open-app-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+/* Impact Metrics Styling Fix */
+.impact-metrics .feature-box {
+  background: #ffffff; /* white background for contrast */
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.impact-metrics .feature-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.2);
+}
+
+.impact-metrics .feature-box i {
+  font-size: 40px;
+  color: #2e7d32; /* dark green icons */
+  margin-bottom: 15px;
+}
+
+.impact-metrics .feature-box h5 {
+  font-weight: bold;
+  color: #2e7d32; /* dark green for headings */
+}
+
+.impact-metrics .feature-box p {
+  color: #333333; /* dark grey for body text */
+  font-size: 1rem;
+}
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar/Header -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container d-flex flex-column align-items-center">
+    <div class="d-flex align-items-center mb-1">
+      <img src="logo.jpg" alt="JOMPO Logo">
+      <a class="navbar-brand ms-2" href="#">JOMPO</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav flex-wrap justify-content-center">
+        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+  <div class="container">
+    <h1>Welcome to JOMPO Digital Solutions</h1>
+    <p>Driving innovation in Agriculture, Green Energy, and Digital Transformation</p>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features">
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-md-6 col-lg-6">
+        <a href="https://jompidigitalsolutuons.lovable.app" class="text-decoration-none">
+          <div class="feature-box feature-agriculture">
+            <i class="fas fa-seedling"></i>
+            <h5>Agriculture</h5>
+            <p>Promoting sustainable farming and food security.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-6 col-lg-6">
+        <a href="https://jompidigitalsolutuons.lovable.app" class="text-decoration-none">
+          <div class="feature-box feature-energy">
+            <i class="fas fa-solar-panel"></i>
+            <h5>Green Energy</h5>
+            <p>Innovative solar and renewable energy solutions.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-6 col-lg-6">
+        <a href="https://jompidigitalsolutuons.lovable.app" class="text-decoration-none">
+          <div class="feature-box feature-tech">
+            <i class="fas fa-globe"></i>
+            <h5>Technology</h5>
+            <p>Digital tools empowering communities worldwide.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-6 col-lg-6">
+        <a href="https://jompidigitalsolutuons.lovable.app" class="text-decoration-none">
+          <div class="feature-box feature-community">
+            <i class="fas fa-users"></i>
+            <h5>Community</h5>
+            <p>Empowering networks through knowledge sharing.</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Add this after the .features section and before the footer -->
+
+<section class="impact-metrics py-5" style="background-color:#e8f5e9;">
+  <div class="container text-center">
+    <h2 class="mb-4" style="color:#2e7d32;">Our Impact</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-3 col-sm-6">
+        <div class="feature-box">
+          <i class="fas fa-user-friends"></i>
+          <h5>500+ Farmers</h5>
+          <p>Empowered through sustainable agriculture programs.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="feature-box">
+          <i class="fas fa-solar-panel"></i>
+          <h5>120+ Green Projects</h5>
+          <p>Implemented solar & renewable energy initiatives.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="feature-box">
+          <i class="fas fa-handshake"></i>
+          <h5>50+ Partnerships</h5>
+          <p>Collaborated with organizations to drive impact.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="feature-box">
+          <i class="fas fa-globe"></i>
+          <h5>Global Reach</h5>
+          <p>Communities supported across multiple countries.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial py-5 text-center">
+  <div class="container">
+    <h2 class="mb-4" style="color:#2e7d32;">What People Say</h2>
+    <p style="font-size:1.2rem; max-width:700px; margin:auto; font-style:italic;">
+      "JOMPO Digital Solutions has transformed our approach to sustainable agriculture and renewable energy. 
+      Their vision and execution are world-class."  
+      <br><strong>- Community Partner</strong>
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="social-icons mb-3">
+    <a href="https://www.youtube.com/channel/UCqmdDLVkt_np9B5U9UgaIzw" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.linkedin.com/company/jompo-digital-solutions" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.facebok.com/profile.php?id=61575137852256" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/jompodigital?igsh=MTR6ZGo1Nmlha2RseA==" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/+254795884562" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <p>Contact: <a href="mailto:maxwellogweno0@gmail.com">maxwellogweno0@gmail.com</a></p>
+  <p>&copy; 2026 JOMPO Digital Solutions</p>
+</footer>
+
+<!-- Floating Open App Button -->
+<a href="https://jompidigitalsolutuons.lovable.app" target="_blank" class="open-app-btn">
+  <i class="fas fa-mobile-alt"></i> Open App
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
