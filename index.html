@@ -179,20 +179,24 @@
   font-size: 1rem;
 }
 
-    /* Logo Styling */
+ /* Make logo round */
 .logo {
-  height: 80px;           /* default height */
-  width: auto;            /* maintain aspect ratio */
-  max-width: 200px;       /* prevents it from getting too big on large screens */
+  height: 80px;       /* default height */
+  width: 80px;        /* make it a square so border-radius works perfectly */
+  object-fit: cover;  /* ensures the image fills the square without distortion */
+  border-radius: 50%; /* makes it fully round */
+  border: 2px solid #ffffff; /* optional: adds a white border for better visibility */
 }
 
-/* Adjust logo size on smaller screens */
+/* Adjust for smaller screens */
 @media (max-width: 768px) {
   .logo {
-    height: 60px;         /* smaller height for mobile */
-    max-width: 150px;
+    height: 60px;
+    width: 60px;
   }
 }
+
+
 
   </style>
 </head>
