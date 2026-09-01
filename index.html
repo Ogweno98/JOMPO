@@ -3,699 +3,290 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JOMPO</title>
+  <meta name="description" content="JOMPO Digital Solutions — youth-led solutions in sustainable agriculture, agro-forestry, green energy, digital innovation and community development." />
+  <title>JOMPO Digital Solutions | Building Solutions. Empowering Communities.</title>
 
-  <!-- Bootstrap & FontAwesome -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f9f4;
-      scroll-behavior: smooth;
-    }
+    :root { --green:#2e7d32; --dark:#1b5e20; --light:#f4f9f4; --yellow:#ffeb3b; --ink:#243024; }
+    html { scroll-behavior:smooth; scroll-padding-top:95px; }
+    body { font-family:'Segoe UI',sans-serif; background:var(--light); color:var(--ink); }
+    .navbar { background:linear-gradient(135deg,var(--green),var(--dark)); padding:.55rem 1rem; box-shadow:0 2px 12px rgba(0,0,0,.15); }
+    .navbar a { color:#fff !important; font-weight:700; font-size:.95rem; }
+    .navbar a:hover { color:var(--yellow) !important; }
+    .navbar-brand { font-size:1.5rem; }
+    .navbar img { height:48px; width:48px; object-fit:cover; border-radius:50%; background:#fff; }
+    .nav-cta { background:var(--yellow); color:var(--green)!important; border-radius:30px; padding:.45rem .9rem!important; margin-left:.35rem; }
 
-    /* Navbar/Header */
-    .navbar {
-      background-color: #2e7d32;
-      padding: 0.5rem 1rem;
-    }
-    .navbar a {
-      color: white !important;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-    .navbar a:hover {
-      text-decoration: underline;
-    }
-    .navbar-brand {
-      font-size: 1.5rem;
-      margin-bottom: 0.3rem;
-    }
-    .navbar img {
-      height: 50px;
-    }
+    .hero { position:relative; min-height:78vh; display:flex; align-items:center; padding:125px 20px 70px; color:#fff; background:linear-gradient(90deg,rgba(16,67,21,.94),rgba(16,67,21,.72),rgba(0,0,0,.25)),url('gym-project-banner.png') center/cover no-repeat; }
+    .hero-content { max-width:900px; }
+    .eyebrow { display:inline-block; padding:.45rem .8rem; border-radius:30px; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.35); font-weight:700; letter-spacing:.04em; }
+    .hero h1 { font-size:clamp(2.4rem,5vw,4.6rem); font-weight:800; line-height:1.05; margin:1rem 0; text-shadow:2px 3px 12px rgba(0,0,0,.35); }
+    .hero p { font-size:1.18rem; line-height:1.7; max-width:760px; }
+    .hero-buttons a { display:inline-block; margin:.35rem .5rem .35rem 0; padding:.8rem 1.25rem; border-radius:30px; text-decoration:none; font-weight:800; }
+    .btn-main { background:var(--yellow); color:var(--green); }
+    .btn-light-outline { border:2px solid #fff; color:#fff; }
 
-    /* Hero Section */
-    .hero {
-      position: relative;
-      background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      color: white;
-      padding: 100px 20px 60px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 70vh;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.35);
-    }
-    .hero > * {
-      position: relative;
-      z-index: 1;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #fff;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-top: 15px;
-      color: #fff;
-      text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
-    }
+    section { padding:75px 20px; }
+    .section-title { text-align:center; color:var(--green); font-weight:800; margin-bottom:12px; }
+    .section-lead { max-width:820px; margin:0 auto 42px; text-align:center; color:#555; font-size:1.08rem; line-height:1.75; }
+    .story-card { background:#fff; border-radius:18px; padding:30px; height:100%; box-shadow:0 8px 24px rgba(0,0,0,.08); border-top:4px solid var(--green); }
+    .story-card i { font-size:32px; color:var(--green); margin-bottom:15px; }
+    .story-card h3 { color:var(--green); font-weight:800; font-size:1.3rem; }
+    .story-card p { color:#555; line-height:1.7; margin-bottom:0; }
 
-    /* Features Section */
-    .features {
-      padding: 60px 20px;
-    }
-    .feature-box {
-      border-radius: 15px;
-      padding: 30px 20px;
-      text-align: center;
-      transition: all 0.4s ease;
-      height: 100%;
-      cursor: pointer;
-      color: white;
-      font-weight: bold;
-    }
-    .feature-box i {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-    .feature-box:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    }
+    .featured { background:#fff; }
+    .project-banner-wrap { background:#f8faf8; border-radius:20px; padding:12px; box-shadow:0 10px 30px rgba(0,0,0,.1); }
+    .project-banner-wrap img { width:100%; display:block; border-radius:12px; }
+    .funding-note { margin-top:18px; padding:18px 20px; background:#e8f5e9; border-left:5px solid var(--green); border-radius:10px; color:#355b38; }
+    .project-copy h3 { color:var(--green); font-weight:800; }
+    .project-copy p { line-height:1.8; color:#4d4d4d; }
+    .tag { display:inline-block; background:#e8f5e9; color:var(--dark); padding:.4rem .7rem; border-radius:20px; font-weight:700; margin:.2rem; font-size:.88rem; }
 
-    /* Gradient backgrounds for feature boxes */
-    .feature-agriculture { background: linear-gradient(135deg, #43a047, #66bb6a); }
-    .feature-energy { background: linear-gradient(135deg, #fdd835, #ffeb3b); color: #2e7d32; }
-    .feature-tech { background: linear-gradient(135deg, #42a5f5, #64b5f6); }
-    .feature-community { background: linear-gradient(135deg, #ab47bc, #ce93d8); }
+    .focus { background:#f1f8f1; }
+    .focus-card { border-radius:18px; padding:30px 22px; height:100%; color:#fff; box-shadow:0 8px 18px rgba(0,0,0,.1); transition:.3s; }
+    .focus-card:hover { transform:translateY(-7px); }
+    .focus-card i { font-size:38px; margin-bottom:15px; }
+    .focus-card h3 { font-size:1.25rem; font-weight:800; }
+    .focus-card p { margin:0; line-height:1.65; }
+    .focus-a { background:linear-gradient(135deg,#388e3c,#66bb6a); }
+    .focus-b { background:linear-gradient(135deg,#f9a825,#ffca28); }
+    .focus-c { background:linear-gradient(135deg,#1976d2,#42a5f5); }
+    .focus-d { background:linear-gradient(135deg,#7b1fa2,#ab47bc); }
 
-    /* Footer */
-    footer {
-      background: linear-gradient(135deg, #2e7d32, #1b5e20);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    footer a {
-      color: #ffffff;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-    }
-    footer a:hover {
-      color: #ffeb3b;
-    }
-    .social-icons a {
-      color: white;
-      font-size: 22px;
-      margin: 0 10px;
-    }
-    .social-icons a:hover {
-      color: #ffeb3b;
-    }
+    .approach-step { position:relative; text-align:center; padding:20px; }
+    .step-number { width:54px; height:54px; display:flex; align-items:center; justify-content:center; margin:0 auto 15px; border-radius:50%; background:var(--green); color:#fff; font-size:1.2rem; font-weight:800; }
+    .approach-step h4 { color:var(--green); font-weight:800; }
+    .approach-step p { color:#555; line-height:1.6; }
 
-    /* Open App Button */
-    .open-app-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #ffeb3b;
-      color: #2e7d32;
-      font-weight: bold;
-      padding: 15px 20px;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      z-index: 1000;
-      transition: all 0.3s ease;
-    }
-    .open-app-btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    }
-/* Impact Metrics Styling Fix */
-.impact-metrics .feature-box {
-  background: #ffffff; /* white background for contrast */
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
+    .gallery { background:#fff; }
+    .gallery-card { overflow:hidden; border-radius:15px; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,.1); height:100%; transition:.3s; }
+    .gallery-card:hover { transform:translateY(-6px); box-shadow:0 12px 25px rgba(0,0,0,.15); }
+    .gallery-card img { width:100%; height:240px; object-fit:cover; display:block; }
+    .gallery-caption { padding:15px 17px; }
+    .gallery-caption h5 { color:var(--green); font-weight:800; margin-bottom:5px; }
+    .gallery-caption p { color:#666; margin:0; font-size:.92rem; line-height:1.5; }
 
-.impact-metrics .feature-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0px 6px 12px rgba(0,0,0,0.2);
-}
+    .impact { background:#e8f5e9; }
+    .impact-box { background:#fff; border-radius:15px; padding:25px 18px; height:100%; box-shadow:0 5px 15px rgba(0,0,0,.08); text-align:center; }
+    .impact-box i { font-size:34px; color:var(--green); margin-bottom:10px; }
+    .impact-box .number { display:block; color:var(--green); font-size:2rem; font-weight:900; }
+    .impact-box h5 { font-weight:800; margin:5px 0; }
+    .impact-box p { color:#555; margin:0; }
+    .impact-note { max-width:850px; margin:30px auto 0; text-align:center; color:#567; font-size:.9rem; }
 
-.impact-metrics .feature-box i {
-  font-size: 40px;
-  color: #2e7d32; /* dark green icons */
-  margin-bottom: 15px;
-}
+    .partner { background:linear-gradient(135deg,var(--dark),#0d4013); color:#fff; }
+    .partner .section-title { color:#fff; }
+    .partner .section-lead { color:#e5eee5; }
+    .partner-card { background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:16px; padding:25px; height:100%; }
+    .partner-card i { font-size:28px; color:var(--yellow); margin-bottom:12px; }
+    .partner-card h3 { font-weight:800; font-size:1.2rem; }
+    .partner-card p { color:#e6eee6; line-height:1.65; margin:0; }
+    .partner-cta { text-align:center; margin-top:38px; }
 
-.impact-metrics .feature-box h5 {
-  font-weight: bold;
-  color: #2e7d32; /* dark green for headings */
-}
+    .projects { background:#fff; }
+    .project-list-card { border:1px solid #dce9dc; border-radius:16px; padding:25px; height:100%; }
+    .project-list-card h3 { color:var(--green); font-weight:800; }
+    .project-list-card p { color:#555; line-height:1.7; }
 
-.impact-metrics .feature-box p {
-  color: #333333; /* dark grey for body text */
-  font-size: 1rem;
-}
+    .civic { background:#f7fbf7; }
+    .civic-box { background:#fff; border-radius:20px; padding:35px; box-shadow:0 8px 24px rgba(0,0,0,.08); }
 
-.logo-wrapper {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffffff;
-}
-
-.logo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
- 
-
-    /* Project Gallery - added section */
-    .project-gallery {
-      padding: 70px 20px;
-      background: #ffffff;
-    }
-
-    .project-gallery .section-intro {
-      max-width: 800px;
-      margin: 0 auto 40px;
-      text-align: center;
-    }
-
-    .project-gallery .section-intro h2 {
-      color: #2e7d32;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .project-gallery .section-intro p {
-      color: #555;
-      font-size: 1.08rem;
-      line-height: 1.7;
-    }
-
-    .gallery-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 16px;
-      background: #ffffff;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.10);
-      height: 100%;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
-
-    .gallery-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.16);
-    }
-
-    .gallery-card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-
-    .gallery-card:hover img {
-      transform: scale(1.05);
-    }
-
-    .gallery-caption {
-      padding: 16px 18px;
-      background: #ffffff;
-    }
-
-    .gallery-caption h5 {
-      margin: 0 0 5px;
-      color: #2e7d32;
-      font-weight: 700;
-      font-size: 1.05rem;
-    }
-
-    .gallery-caption p {
-      margin: 0;
-      color: #666;
-      font-size: 0.92rem;
-    }
-
-    @media (max-width: 576px) {
-      .gallery-card img {
-        height: 230px;
-      }
-    }
-
-    /* GYM Project Banner - added */
-    .gym-project-banner {
-      padding: 35px 20px 10px;
-      background: #ffffff;
-    }
-    .gym-project-banner img {
-      width: 100%;
-      max-height: 620px;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    }
-    .gym-project-intro {
-      text-align: center;
-      padding: 18px 10px 5px;
-    }
-    .gym-project-intro h2 {
-      color: #2e7d32;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .gym-project-intro p {
-      max-width: 850px;
-      margin: 0 auto;
-      color: #444;
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-
+    footer { background:linear-gradient(135deg,var(--green),var(--dark)); color:#fff; padding:50px 20px 25px; }
+    footer h5 { font-weight:800; margin-bottom:15px; }
+    footer p, footer li { color:#e4eee4; line-height:1.7; }
+    footer a { color:#fff; text-decoration:none; }
+    footer a:hover { color:var(--yellow); }
+    .social-icons a { font-size:20px; margin-right:16px; }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,.25); margin-top:30px; padding-top:18px; text-align:center; color:#dce9dc; }
+    .open-app-btn { position:fixed; bottom:20px; right:20px; background:var(--yellow); color:var(--green); font-weight:800; padding:14px 20px; border-radius:50px; text-decoration:none; box-shadow:0 6px 12px rgba(0,0,0,.25); z-index:1000; }
+    .open-app-btn:hover { color:var(--dark); transform:translateY(-3px); }
+    @media(max-width:991px){ .navbar .container{align-items:center!important}.hero{text-align:center}.hero p{margin-left:auto;margin-right:auto}.navbar-collapse{padding-top:10px}.nav-cta{display:inline-block;margin:.4rem 0} }
+    @media(max-width:576px){ section{padding:55px 15px}.hero{min-height:82vh;padding-top:120px}.gallery-card img{height:220px}.open-app-btn{bottom:14px;right:14px;padding:12px 16px} }
   </style>
 </head>
 <body>
 
-<!-- Navbar/Header -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-  <div class="container d-flex flex-column align-items-center">
-    <div class="d-flex align-items-center mb-1">
-      <img src="logo.jpg" alt="JOMPO Logo">
-      <a class="navbar-brand ms-2" href="#">JOMPO</a>
-    </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-      <ul class="navbar-nav flex-wrap justify-content-center">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#hero">
+      <img src="logo.jpg" alt="JOMPO Logo"><span class="ms-2">JOMPO</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#challenge">Why It Matters</a></li>
+        <li class="nav-item"><a class="nav-link" href="#approach">Our Approach</a></li>
         <li class="nav-item"><a class="nav-link" href="#gym-project">GYM Project</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#impact">Impact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#partner">Partner With Us</a></li>
+        <li class="nav-item"><a class="nav-link nav-cta" href="https://jompodigitalsolutions.lovable.app" target="_blank">Open App</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Hero Section -->
 <section id="hero" class="hero">
-  <div class="container">
-    <h1>Welcome to JOMPO Digital Solutions</h1>
-    <p>Driving innovation in Agriculture, Green Energy, and Digital Transformation</p>
-  </div>
-</section>
-
-<!-- Features Section -->
-<section id="features" class="features">
-  <div class="container">
-    <div class="row g-4 justify-content-center">
-
-      <div class="col-md-6 col-lg-6">
-        <a href="https://jompodigitalsolutions.lovable.app" class="text-decoration-none">
-          <div class="feature-box feature-agriculture">
-            <i class="fas fa-seedling"></i>
-            <h5>Agriculture</h5>
-            <p>Promoting sustainable farming and food security.</p>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-md-6 col-lg-6">
-        <a href="https://jompodigitalsolutions.lovable.app" class="text-decoration-none">
-          <div class="feature-box feature-energy">
-            <i class="fas fa-solar-panel"></i>
-            <h5>Green Energy</h5>
-            <p>Innovative solar and renewable energy solutions.</p>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-md-6 col-lg-6">
-        <a href="https://jompodigitalsolutions.lovable.app" class="text-decoration-none">
-          <div class="feature-box feature-tech">
-            <i class="fas fa-globe"></i>
-            <h5>Technology</h5>
-            <p>Digital tools empowering communities worldwide.</p>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-md-6 col-lg-6">
-        <a href="https://jompodigitalsolutions.lovable.app" class="text-decoration-none">
-          <div class="feature-box feature-community">
-            <i class="fas fa-users"></i>
-            <h5>Community</h5>
-            <p>Empowering networks through knowledge sharing.</p>
-          </div>
-        </a>
-      </div>
-
+  <div class="container hero-content">
+    <span class="eyebrow">JOMPO DIGITAL SOLUTIONS</span>
+    <h1>Building Solutions.<br>Empowering Communities.<br>Creating Lasting Impact.</h1>
+    <p>We work with young people and communities to turn local challenges into practical solutions across sustainable agriculture, agro-forestry, green energy, digital innovation and community development.</p>
+    <div class="hero-buttons">
+      <a class="btn-main" href="#gym-project">Explore Our Work</a>
+      <a class="btn-light-outline" href="#partner">Partner With JOMPO</a>
     </div>
   </div>
 </section>
 
-  
-<!-- Add this after the .features section and before the footer -->
-
-
-<!-- GYM Project Banner - added -->
-<section id="gym-project" class="gym-project-banner">
+<section id="challenge">
   <div class="container">
-    <img src="gym-project-banner.png" alt="Global Youth Mobilization - Agriculture and Agro-Forestry Project banner">
-    <div class="gym-project-intro">
-      <h2>Global Youth Mobilization – Agriculture &amp; Agro-Forestry Project</h2>
-      <p>
-        This project is implemented by JOMPO Digital Solutions through the Global Youth Mobilization (GYM) Youth Empowerment Fund.
-        It supports young people to engage in sustainable agriculture and agro-forestry, strengthen livelihoods, restore the environment,
-        and build greener, more resilient communities.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- Project Gallery Section - added without changing the existing sections -->
-<section id="gallery" class="project-gallery">
-  <div class="container">
-    <div class="section-intro">
-      <h2>Global Youth Mobilization – Project Gallery</h2>
-      <p>
-        Explore moments from the Global Youth Mobilization (GYM) – Agriculture &amp; Agro-Forestry Project.
-        These photos showcase young people taking action through sustainable farming, agro-forestry,
-        environmental stewardship, and community-led initiatives.
-      </p>
-    </div>
-
+    <h2 class="section-title">Why This Work Matters</h2>
+    <p class="section-lead">Communities need practical opportunities to respond to economic, environmental and civic challenges. JOMPO brings people, ideas and technology together to support locally grounded action.</p>
     <div class="row g-4">
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-01.jpg" alt="Community members working on a project site" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Community Action</h5>
-            <p>Working together to turn ideas into practical results.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-02.jpg" alt="Project site surrounded by trees and greenery" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Growing Together</h5>
-            <p>Creating productive spaces while respecting our natural surroundings.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-03.jpg" alt="Prepared ground at a project site" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Preparing the Ground</h5>
-            <p>Every successful project begins with careful preparation.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-04.jpg" alt="Community members working on land" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Hands-On Field Work</h5>
-            <p>Practical work that supports stronger and more resilient communities.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-05.jpg" alt="Waste collected at an environmental site" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Environmental Stewardship</h5>
-            <p>Promoting cleaner spaces and greater environmental responsibility.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-06.jpg" alt="People working together in a cultivated field" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Working as a Team</h5>
-            <p>Community participation is at the heart of sustainable development.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-07.jpg" alt="Community members engaged in field work" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Practical Skills</h5>
-            <p>Learning by doing and building useful skills for the future.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-08.jpg" alt="Cultivated agricultural field" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Sustainable Cultivation</h5>
-            <p>Supporting productive land and responsible farming practices.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-09.jpg" alt="Agricultural field with growing crops" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Crop Development</h5>
-            <p>Nurturing productive fields for stronger food systems.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-10.jpg" alt="People working across an open agricultural field" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Field Collaboration</h5>
-            <p>Bringing people together around practical agricultural work.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-11.jpg" alt="Environmental site showing accumulated waste" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Cleaner Communities</h5>
-            <p>Raising awareness about responsible waste management.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-12.jpg" alt="Healthy maize crop growing in a field" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Healthy Crops</h5>
-            <p>Encouraging productive agriculture and food security.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-13.jpg" alt="Green crops growing in an agricultural field" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Growing for the Future</h5>
-            <p>Investing in agriculture that can serve communities for years to come.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-14.jpg" alt="People working together in a field" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Community Participation</h5>
-            <p>Progress becomes stronger when communities take part.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-15.jpg" alt="Cultivated land with young vegetation" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Responsible Land Use</h5>
-            <p>Making productive use of land while caring for the environment.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-16.jpg" alt="Maize field with a community member working among the crops" loading="lazy">
-          <div class="gallery-caption">
-            <h5>From Farm to Future</h5>
-            <p>Supporting agricultural work that strengthens local livelihoods.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-17.jpg" alt="Person working among mature maize crops" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Field Progress</h5>
-            <p>Documenting the journey from cultivation to a productive harvest.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-18.jpg" alt="Community member in a maize field" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Local Impact</h5>
-            <p>Real people, real work, and practical steps toward food security.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4">
-        <div class="gallery-card">
-          <img src="gymphoto-19.jpg" alt="Person working in a mature maize field" loading="lazy">
-          <div class="gallery-caption">
-            <h5>Harvest Journey</h5>
-            <p>Celebrating the progress that comes from patience, effort, and teamwork.</p>
-          </div>
-        </div>
-      </div>
+      <div class="col-md-4"><div class="story-card"><i class="fas fa-user-graduate"></i><h3>Youth Opportunity</h3><p>Creating practical pathways for young people to develop skills, participate in local development and lead solutions in their communities.</p></div></div>
+      <div class="col-md-4"><div class="story-card"><i class="fas fa-leaf"></i><h3>Food & Environmental Resilience</h3><p>Promoting sustainable agriculture, agro-forestry and responsible land-use practices that strengthen community resilience.</p></div></div>
+      <div class="col-md-4"><div class="story-card"><i class="fas fa-laptop-code"></i><h3>Digital Inclusion</h3><p>Using technology and digital tools to improve access to information, participation, accountability and community problem-solving.</p></div></div>
     </div>
   </div>
 </section>
 
-<section class="impact-metrics py-5" style="background-color:#e8f5e9;">
-  <div class="container text-center">
-    <h2 class="mb-4" style="color:#2e7d32;">Our Impact</h2>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-3 col-sm-6">
-        <div class="feature-box">
-          <i class="fas fa-user-friends"></i>
-          <h5>500+ Farmers</h5>
-          <p>Empowered through sustainable agriculture programs.</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="feature-box">
-          <i class="fas fa-solar-panel"></i>
-          <h5>20+ Green Projects</h5>
-          <p>Implemented solar & renewable energy initiatives.</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="feature-box">
-          <i class="fas fa-handshake"></i>
-          <h5>5+ Partnerships</h5>
-          <p>Collaborated with organizations to drive impact.</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="feature-box">
-          <i class="fas fa-globe"></i>
-          <h5>Global Reach</h5>
-          <p>Communities supported across multiple countries.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="testimonial py-5 text-center">
+<section class="focus" id="what-we-do">
   <div class="container">
-    <h2 class="mb-4" style="color:#2e7d32;">What People Say</h2>
-    <p style="font-size:1.2rem; max-width:700px; margin:auto; font-style:italic;">
-      "JOMPO Digital Solutions has transformed our approach to sustainable agriculture and renewable energy. 
-      Their vision and execution are world-class."  
-      <br><strong>- Community Partner</strong>
-    </p>
+    <h2 class="section-title">How We Create Impact</h2>
+    <p class="section-lead">Our work connects practical community action with skills, technology and partnerships.</p>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3"><div class="focus-card focus-a"><i class="fas fa-seedling"></i><h3>Sustainable Agriculture</h3><p>Promoting climate-smart farming, food security and sustainable land-use practices.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="focus-card focus-b"><i class="fas fa-tree"></i><h3>Agro-Forestry</h3><p>Supporting tree growing, ecosystem restoration, productive land use and biodiversity.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="focus-card focus-c"><i class="fas fa-users"></i><h3>Youth Empowerment</h3><p>Building skills, creating opportunities and supporting young people to take action.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="focus-card focus-d"><i class="fas fa-laptop"></i><h3>Digital Innovation</h3><p>Developing digital tools that help communities access information and participate in solutions.</p></div></div>
+    </div>
   </div>
 </section>
 
-<!-- CivicLens Section -->
-<section id="civiclens" class="py-5" style="background-color:#ffffff;">
-  <div class="container text-center">
-    <h2 class="mb-3" style="color:#2e7d32;">CivicLens</h2>
-    <p style="max-width:800px; margin:auto; font-size:1.1rem; color:#333;">
-      CivicLens is a civic technology platform by JOMPO Digital Solutions that enables
-      citizens to report issues, access public information, and strengthen accountability
-      at local, national, and global levels.
-    </p>
-    <a
-      href="https://civiclensz.lovable.app"
-      target="_blank"
-      class="btn btn-success mt-4 px-4 py-2"
-      style="border-radius:30px; font-weight:600;"
-    >
-      Launch CivicLens
-    </a>
+<section id="gym-project" class="featured">
+  <div class="container">
+    <h2 class="section-title">Featured Project</h2>
+    <p class="section-lead">A practical example of how JOMPO connects youth participation, agriculture and environmental action.</p>
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-7"><div class="project-banner-wrap"><img src="gym-project-banner.png" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project banner"></div></div>
+      <div class="col-lg-5 project-copy">
+        <h3>Global Youth Mobilization – Agriculture &amp; Agro-Forestry Project</h3>
+        <p>This project is implemented by JOMPO Digital Solutions through the <strong>Global Youth Mobilization (GYM) Youth Empowerment Fund</strong>. It focuses on practical youth engagement in sustainable agriculture and agro-forestry.</p>
+        <p>The project brings young people into hands-on activities that connect food production, environmental stewardship, skills development and community participation.</p>
+        <div><span class="tag">Youth Empowerment</span><span class="tag">Agriculture</span><span class="tag">Agro-Forestry</span><span class="tag">Environment</span></div>
+        <div class="funding-note"><strong>Funding recognition:</strong> The project banner identifies the Global Youth Mobilization and the European Union funding contribution.</div>
+      </div>
+    </div>
   </div>
 </section>
-  
-<!-- Footer -->
-<footer>
-  <div class="social-icons mb-3">
-    <a href="https://www.youtube.com/channel/UCqmdDLVkt_np9B5U9UgaIzw" target="_blank"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.linkedin.com/company/jompo-digital-solutions" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-    <a href="https://www.facebok.com/profile.php?id=61575137852256" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.instagram.com/jompodigital?igsh=MTR6ZGo1Nmlha2RseA==" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://wa.me/+254795884562" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<section id="approach">
+  <div class="container">
+    <h2 class="section-title">From Ideas to Impact</h2>
+    <p class="section-lead">We believe sustainable projects are built through listening, action, learning and strong partnerships.</p>
+    <div class="row g-3">
+      <div class="col-md"><div class="approach-step"><div class="step-number">1</div><h4>Listen</h4><p>Understand local challenges, priorities and opportunities.</p></div></div>
+      <div class="col-md"><div class="approach-step"><div class="step-number">2</div><h4>Equip</h4><p>Connect people with knowledge, skills, tools and opportunities.</p></div></div>
+      <div class="col-md"><div class="approach-step"><div class="step-number">3</div><h4>Act</h4><p>Support practical, locally led activities and solutions.</p></div></div>
+      <div class="col-md"><div class="approach-step"><div class="step-number">4</div><h4>Measure</h4><p>Document activities, progress and lessons from implementation.</p></div></div>
+      <div class="col-md"><div class="approach-step"><div class="step-number">5</div><h4>Scale</h4><p>Build partnerships that can extend approaches that work.</p></div></div>
+    </div>
   </div>
-  <p>Contact: <a href="mailto:jompodigitalsolutions@gmail.com">jompodigitalsolutions@gmail.com</a></p>
-  <p>&copy; 2026 JOMPO Digital Solutions</p>
+</section>
+
+<section id="gallery" class="gallery">
+  <div class="container">
+    <h2 class="section-title">Our Work in Action</h2>
+    <p class="section-lead">These photographs document activities and field settings from the Global Youth Mobilization – Agriculture &amp; Agro-Forestry Project.</p>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-01.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-02.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-03.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-04.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-05.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-06.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-07.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-08.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-09.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-10.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-11.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-12.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-13.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-14.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-15.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-16.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-17.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-18.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="gallery-card"><img src="gymphoto-19.jpg" alt="Global Youth Mobilization Agriculture and Agro-Forestry Project field activity" loading="lazy"><div class="gallery-caption"><h5>GYM Project Field Work</h5><p>Documenting practical agriculture, agro-forestry and community activities.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="impact" class="impact">
+  <div class="container">
+    <h2 class="section-title">Our Impact</h2>
+    <p class="section-lead">Selected indicators currently presented by JOMPO. We believe impact should be documented, transparent and continually improved.</p>
+    <div class="row g-4">
+      <div class="col-md-3 col-sm-6"><div class="impact-box"><i class="fas fa-user-friends"></i><span class="number">500+</span><h5>Farmers</h5><p>Empowered through sustainable agriculture programmes.</p></div></div>
+      <div class="col-md-3 col-sm-6"><div class="impact-box"><i class="fas fa-solar-panel"></i><span class="number">20+</span><h5>Green Projects</h5><p>Renewable energy and environmental initiatives.</p></div></div>
+      <div class="col-md-3 col-sm-6"><div class="impact-box"><i class="fas fa-handshake"></i><span class="number">5+</span><h5>Partnerships</h5><p>Collaborations supporting community impact.</p></div></div>
+      <div class="col-md-3 col-sm-6"><div class="impact-box"><i class="fas fa-globe-africa"></i><span class="number">Global</span><h5>Reach</h5><p>Connecting local action with wider opportunities.</p></div></div>
+    </div>
+    <p class="impact-note">For funders and partners, JOMPO can provide project-specific information and supporting documentation for the relevant programme.</p>
+  </div>
+</section>
+
+<section id="projects" class="projects">
+  <div class="container">
+    <h2 class="section-title">Our Projects &amp; Solutions</h2>
+    <p class="section-lead">JOMPO combines community-based action with digital innovation. Our portfolio can grow as new partnerships and projects are developed.</p>
+    <div class="row g-4">
+      <div class="col-lg-6"><div class="project-list-card"><h3><i class="fas fa-seedling me-2"></i>GYM – Agriculture &amp; Agro-Forestry</h3><p>A youth-focused project connecting practical agriculture, agro-forestry, environmental action and community participation through the Global Youth Mobilization Youth Empowerment Fund.</p><a class="btn btn-success rounded-pill" href="#gym-project">View Project</a></div></div>
+      <div class="col-lg-6"><div class="project-list-card"><h3><i class="fas fa-bullhorn me-2"></i>CivicLens</h3><p>A civic technology platform by JOMPO Digital Solutions that enables citizens to report issues, access public information and strengthen accountability at local, national and global levels.</p><a class="btn btn-success rounded-pill" href="https://civiclensz.lovable.app" target="_blank">Launch CivicLens</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="partner" class="partner">
+  <div class="container">
+    <h2 class="section-title">Partner With JOMPO</h2>
+    <p class="section-lead">JOMPO welcomes funders, development organizations, institutions and strategic partners who want to support practical, youth-driven solutions.</p>
+    <div class="row g-4">
+      <div class="col-md-4"><div class="partner-card"><i class="fas fa-hand-holding-heart"></i><h3>Fund a Project</h3><p>Support the implementation or expansion of a focused initiative in agriculture, agro-forestry, youth empowerment, green energy or digital innovation.</p></div></div>
+      <div class="col-md-4"><div class="partner-card"><i class="fas fa-people-arrows"></i><h3>Partner With Us</h3><p>Explore technical, institutional, implementation or strategic collaboration that strengthens community-led action.</p></div></div>
+      <div class="col-md-4"><div class="partner-card"><i class="fas fa-file-circle-check"></i><h3>Request Project Information</h3><p>We can share relevant project information, implementation evidence and partnership details for due diligence and planning.</p></div></div>
+    </div>
+    <div class="partner-cta"><a href="mailto:jompodigitalsolutions@gmail.com?subject=JOMPO%20Partnership%20Inquiry" class="btn btn-warning btn-lg rounded-pill fw-bold px-4">Start a Partnership Conversation</a></div>
+  </div>
+</section>
+
+<section id="civiclens" class="civic">
+  <div class="container">
+    <div class="civic-box text-center">
+      <h2 class="section-title">Digital Innovation: CivicLens</h2>
+      <p class="section-lead mb-3">Technology is part of how JOMPO connects people with information, participation and accountability.</p>
+      <a href="https://civiclensz.lovable.app" target="_blank" class="btn btn-success rounded-pill px-4 fw-bold">Launch CivicLens</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4"><h5>About JOMPO</h5><p>JOMPO Digital Solutions works to connect youth, communities, technology and practical solutions for sustainable development.</p><div class="social-icons"><a href="https://www.youtube.com/channel/UCqmdDLVkt_np9B5U9UgaIzw" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://www.linkedin.com/company/jompo-digital-solutions" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://www.facebok.com/profile.php?id=61575137852256" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/jompodigital?igsh=MTR6ZGo1Nmlha2RseA==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://wa.me/+254795884562" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div>
+      <div class="col-sm-6 col-lg-2"><h5>Quick Links</h5><p><a href="#hero">Home</a><br><a href="#challenge">Why It Matters</a><br><a href="#approach">Our Approach</a><br><a href="#gym-project">GYM Project</a><br><a href="#gallery">Gallery</a><br><a href="#impact">Impact</a></p></div>
+      <div class="col-sm-6 col-lg-3"><h5>Focus Areas</h5><p>Agriculture<br>Agro-Forestry<br>Youth Empowerment<br>Green Energy<br>Digital Innovation<br>Community Development</p></div>
+      <div class="col-lg-3"><h5>Contact Us</h5><p><i class="fas fa-envelope me-2"></i><a href="mailto:jompodigitalsolutions@gmail.com">jompodigitalsolutions@gmail.com</a><br><i class="fas fa-phone me-2"></i><a href="https://wa.me/+254795884562" target="_blank">WhatsApp / Phone</a></p><p><strong>Partnerships &amp; Funding:</strong><br><a href="mailto:jompodigitalsolutions@gmail.com?subject=JOMPO%20Funding%20Inquiry">Contact JOMPO</a></p></div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 JOMPO Digital Solutions. All Rights Reserved.</div>
+  </div>
 </footer>
 
-<!-- Floating Open App Button -->
-<a href="https://jompodigitalsolutions.lovable.app" target="_blank" class="open-app-btn">
-  <i class="fas fa-mobile-alt"></i> Open App
-</a>
-
+<a href="https://jompodigitalsolutions.lovable.app" target="_blank" class="open-app-btn"><i class="fas fa-mobile-alt"></i> Open App</a>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
 </body>
 </html>
