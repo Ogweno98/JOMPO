@@ -145,6 +145,11 @@
     .support-card .number { display:inline-flex; width:42px; height:42px; align-items:center; justify-content:center; border-radius:50%; background:#e8f5e9; color:var(--green); font-weight:900; margin-bottom:15px; }
     .support-card h3 { color:var(--green); font-weight:800; font-size:1.2rem; }
     .support-card p { color:#555; line-height:1.7; }
+
+    .request-section { background:#f7fbf7; }
+    .request-box { background:#fff; border-radius:22px; padding:35px; border:1px solid #dce9dc; box-shadow:0 8px 24px rgba(0,0,0,.07); }
+    .request-box .form-control,.request-box .form-select { border-color:#cfe0cf; }
+    .request-box .form-control:focus,.request-box .form-select:focus { border-color:var(--green); box-shadow:0 0 0 .2rem rgba(46,125,50,.12); }
     .closing-cta { background:linear-gradient(135deg,var(--green),var(--dark)); color:#fff; border-radius:24px; padding:45px; }
     .closing-cta h2 { font-weight:900; }
     .closing-cta p { color:#e7f1e7; max-width:800px; margin:0 auto 24px; line-height:1.75; }
@@ -349,8 +354,8 @@
     <h2 class="section-title">Our Team</h2>
     <p class="team-note">JOMPO is led by a growing team committed to turning community ideas into practical solutions. Leadership and team profiles will be expanded as we document the people behind our work.</p>
     <div class="row g-4 justify-content-center">
-      <div class="col-sm-6 col-lg-4"><div class="team-card"><div class="team-photo"><img src="team-maxwel-ogweno.jpg" alt="Maxwel Ogweno, Founder of JOMPO Digital Solutions" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="photo-placeholder" style="display:none"><i class="fas fa-user-circle"></i><div>Photo coming soon</div></div></div><div class="team-body"><h3>Maxwel Ogweno</h3><div class="team-role">Founder</div><p>Founder of JOMPO Digital Solutions, supporting the organization's vision, partnerships and development of practical solutions for communities.</p></div></div></div>
-      <div class="col-sm-6 col-lg-4"><div class="team-card"><div class="team-photo"><img src="team-florence-akinyi.jpg" alt="Florence Akinyi, Co-Founder of JOMPO Digital Solutions" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="photo-placeholder" style="display:none"><i class="fas fa-user-circle"></i><div>Photo coming soon</div></div></div><div class="team-body"><h3>Florence Akinyi</h3><div class="team-role">Co-Founder</div><p>Co-Founder of JOMPO Digital Solutions, contributing to the organization's community-focused work and collaborative development.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="team-card"><div class="team-photo"><img src="team/team-founder.jpg" alt="Maxwel Ogweno, Founder of JOMPO Digital Solutions" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="photo-placeholder" style="display:none"><i class="fas fa-user-circle"></i><div>Photo coming soon</div></div></div><div class="team-body"><h3>Maxwel Ogweno</h3><div class="team-role">Founder</div><p>Founder of JOMPO Digital Solutions, supporting the organization's vision, partnerships and development of practical solutions for communities.</p></div></div></div>
+      <div class="col-sm-6 col-lg-4"><div class="team-card"><div class="team-photo"><img src="team/team-cofounder.jpg" alt="Florence Akinyi, Co-Founder of JOMPO Digital Solutions" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div class="photo-placeholder" style="display:none"><i class="fas fa-user-circle"></i><div>Photo coming soon</div></div></div><div class="team-body"><h3>Florence Akinyi</h3><div class="team-role">Co-Founder</div><p>Co-Founder of JOMPO Digital Solutions, contributing to the organization's community-focused work and collaborative development.</p></div></div></div>
       <div class="col-sm-6 col-lg-4"><div class="team-card"><div class="team-photo"><div class="photo-placeholder"><i class="fas fa-user-circle"></i><div>Team Member 3<br><small>Photo coming soon</small></div></div></div><div class="team-body"><h3>Team Member 3</h3><div class="team-role">Role to be added</div><p>Team profile and responsibilities will be added as the organization finalizes the public team profile.</p></div></div></div>
       <div class="col-sm-6 col-lg-4"><div class="team-card"><div class="team-photo"><div class="photo-placeholder"><i class="fas fa-user-circle"></i><div>Team Member 4<br><small>Photo coming soon</small></div></div></div><div class="team-body"><h3>Team Member 4</h3><div class="team-role">Role to be added</div><p>Team profile and responsibilities will be added as the organization finalizes the public team profile.</p></div></div></div>
       <div class="col-sm-6 col-lg-4"><div class="team-card"><div class="team-photo"><div class="photo-placeholder"><i class="fas fa-user-circle"></i><div>Team Member 5<br><small>Photo coming soon</small></div></div></div><div class="team-body"><h3>Team Member 5</h3><div class="team-role">Role to be added</div><p>Team profile and responsibilities will be added as the organization finalizes the public team profile.</p></div></div></div>
@@ -453,7 +458,30 @@
           <p class="mb-0">For a serious funding conversation, JOMPO can work with a partner to define the problem, target participants, activities, implementation timeline, budget, measurable outputs and reporting expectations for the proposed intervention. This keeps the funding request specific rather than presenting a one-size-fits-all figure.</p>
           <p class="budget-note mb-0"><strong>Important:</strong> Funding amounts should be agreed from a project-specific budget and scope; the website does not present invented figures.</p>
         </div>
-        <div class="col-lg-4 text-lg-end"><a href="mailto:jompodigitalsolutions@gmail.com?subject=Request%20for%20JOMPO%20Project%20Concept%20%26%20Budget" class="btn btn-success btn-lg rounded-pill fw-bold px-4">Request a Project Concept</a></div>
+        <div class="col-lg-4 text-lg-end"><a href="#project-request" class="btn btn-success btn-lg rounded-pill fw-bold px-4">Request a Project Concept</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="project-request" class="request-section">
+  <div class="container">
+    <h2 class="section-title">Request a Project Concept</h2>
+    <p class="section-lead">Tell us what you are interested in supporting. Your request will open an email addressed to JOMPO with the information you provide, ready for discussion.</p>
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="request-box">
+          <form onsubmit="sendConceptRequest(event)">
+            <div class="row g-4">
+              <div class="col-md-6"><label for="name" class="form-label fw-bold">Your name / organization</label><input id="name" class="form-control form-control-lg" required placeholder="e.g. Organization or Fund Manager"></div>
+              <div class="col-md-6"><label for="email" class="form-label fw-bold">Email address</label><input id="email" type="email" class="form-control form-control-lg" required placeholder="name@organization.org"></div>
+              <div class="col-md-6"><label for="interest" class="form-label fw-bold">Area of interest</label><select id="interest" class="form-select form-select-lg"><option>JOMPO AI / Digital Innovation</option><option>Agriculture & Agro-Forestry</option><option>Youth Empowerment</option><option>Green Energy / Environment</option><option>Community Development</option><option>Other / Multi-area</option></select></div>
+              <div class="col-md-6"><label for="support" class="form-label fw-bold">Partnership interest</label><select id="support" class="form-select form-select-lg"><option>Test & Learn / Pilot</option><option>Implement & Measure</option><option>Strengthen & Expand</option><option>Technical / Strategic Partnership</option><option>Other</option></select></div>
+              <div class="col-12"><label for="message" class="form-label fw-bold">What would you like JOMPO to prepare?</label><textarea id="message" class="form-control" rows="5" required placeholder="Briefly describe the opportunity, target area, timeline or funding interest. You can keep it high-level."></textarea></div>
+              <div class="col-12 text-center"><button type="submit" class="btn btn-success btn-lg rounded-pill fw-bold px-5"><i class="fas fa-paper-plane me-2"></i>Send Request to JOMPO</button><p class="small text-muted mt-3 mb-0">This opens your email application with a prepared request. No information is submitted to a third-party form service.</p></div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -507,5 +535,19 @@
 
 <a href="https://jompodigitalsolutions.lovable.app" target="_blank" class="open-app-btn"><i class="fas fa-mobile-alt"></i> Open App</a>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+function sendConceptRequest(event){
+  event.preventDefault();
+  const name=document.getElementById('name').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const interest=document.getElementById('interest').value;
+  const support=document.getElementById('support').value;
+  const message=document.getElementById('message').value.trim();
+  const subject=encodeURIComponent('JOMPO Project Concept Request - '+interest);
+  const body=encodeURIComponent('Hello JOMPO Digital Solutions,\n\nI would like to request a project concept and budget discussion.\n\nName / Organization: '+name+'\nEmail: '+email+'\nArea of interest: '+interest+'\nPartnership interest: '+support+'\n\nMessage / opportunity: '+message+'\n\nThank you.');
+  window.location.href='mailto:jompodigitalsolutions@gmail.com?subject='+subject+'&body='+body;
+}
+</script>
 </body>
 </html>
