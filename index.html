@@ -47,6 +47,34 @@
     .featured { background:#fff; }
     .project-banner-wrap { background:#f8faf8; border-radius:20px; padding:12px; box-shadow:0 10px 30px rgba(0,0,0,.1); }
     .project-banner-wrap img { width:100%; display:block; border-radius:12px; }
+
+    .activity-photo-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin:18px 0 20px; }
+    .activity-photo-grid img { width:100%; height:150px; object-fit:cover; border-radius:12px; cursor:pointer; transition:transform .2s, box-shadow .2s; }
+    .activity-photo-grid img:hover { transform:scale(1.02); box-shadow:0 8px 20px rgba(0,0,0,.12); }
+    .activity-photo-label { font-size:.78rem; color:#6b6b6b; margin-top:-10px; margin-bottom:14px; }
+    .gym-activity-card { background:#fff; border:1px solid #dfeade; border-radius:18px; padding:22px; height:100%; box-shadow:0 7px 20px rgba(0,0,0,.06); }
+    .gym-activity-card h4 { color:var(--green); font-weight:800; }
+    .gym-activity-card p { color:#555; line-height:1.65; }
+    .gym-activity-card .activity-photo-grid img { height:130px; }
+    @media (max-width:576px) {
+      .activity-photo-grid { grid-template-columns:1fr 1fr; }
+      .gym-activity-card .activity-photo-grid img { height:105px; }
+    }
+
+    .gym-activities { margin-top:48px; }
+    .activity-card { background:#fff; border:1px solid #dfeade; border-radius:18px; padding:28px 24px; height:100%; box-shadow:0 7px 20px rgba(0,0,0,.07); transition:.25s; }
+    .activity-card:hover { transform:translateY(-5px); box-shadow:0 12px 28px rgba(0,0,0,.11); border-color:#b8d8ba; }
+    .activity-icon { width:58px; height:58px; display:flex; align-items:center; justify-content:center; border-radius:16px; background:#e8f5e9; color:var(--green); font-size:26px; margin-bottom:18px; }
+    .activity-card h4 { color:var(--green); font-weight:800; margin-bottom:10px; }
+    .activity-card p { color:#555; line-height:1.65; margin-bottom:18px; }
+    .activity-card .btn { font-weight:800; }
+    .activity-modal .modal-header { background:linear-gradient(135deg,var(--green),var(--dark)); color:#fff; }
+    .activity-modal .modal-title { font-weight:800; }
+    .activity-modal .modal-body { color:#4d4d4d; line-height:1.8; }
+    .activity-modal .modal-body h5 { color:var(--green); font-weight:800; margin-top:20px; }
+    .activity-modal .modal-body h5:first-child { margin-top:0; }
+    .activity-modal .modal-body ul { padding-left:1.2rem; }
+    .activity-intro { max-width:900px; margin:0 auto 28px; text-align:center; color:#555; line-height:1.75; }
     .funding-note { margin-top:18px; padding:18px 20px; background:#e8f5e9; border-left:5px solid var(--green); border-radius:10px; color:#355b38; }
     .project-copy h3 { color:var(--green); font-weight:800; }
     .project-copy p { line-height:1.8; color:#4d4d4d; }
@@ -317,8 +345,128 @@
         <div class="funding-note"><strong>Funding recognition:</strong> The project banner identifies the Global Youth Mobilization and the European Union funding contribution.</div>
       </div>
     </div>
+
+    <div class="gym-activities">
+      <h3 class="section-title">GYM Project Activities</h3>
+      <p class="activity-intro">The GYM project brings together practical environmental and sustainable agriculture activities. The project gallery is now organized by activity so visitors can see the work connected to each area instead of viewing all 19 photographs as one mixed gallery.</p>
+      <div class="row g-4">
+
+        <div class="col-md-6">
+          <div class="gym-activity-card">
+            <div class="activity-icon"><i class="fas fa-leaf"></i></div>
+            <h4>Environmental Conservation</h4>
+            <p>Community action focused on caring for the environment, responsible stewardship of natural resources and practical responses to environmental degradation.</p>
+            <div class="activity-photo-grid"><a href="gymphoto-01.jpg" target="_blank" rel="noopener"><img src="gymphoto-01.jpg" alt="Environmental Conservation project activity photo" loading="lazy"></a><a href="gymphoto-04.jpg" target="_blank" rel="noopener"><img src="gymphoto-04.jpg" alt="Environmental Conservation project activity photo" loading="lazy"></a><a href="gymphoto-05.jpg" target="_blank" rel="noopener"><img src="gymphoto-05.jpg" alt="Environmental Conservation project activity photo" loading="lazy"></a><a href="gymphoto-11.jpg" target="_blank" rel="noopener"><img src="gymphoto-11.jpg" alt="Environmental Conservation project activity photo" loading="lazy"></a></div>
+            <div class="activity-photo-label">4 photos from the GYM project gallery</div>
+            <button type="button" class="btn btn-outline-success rounded-pill" data-bs-toggle="modal" data-bs-target="#activityEnvironmental">Read More <i class="fas fa-arrow-right ms-1"></i></button>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="gym-activity-card">
+            <div class="activity-icon"><i class="fas fa-tree"></i></div>
+            <h4>Agroforestry Development</h4>
+            <p>Integrating trees and agricultural activity to support resilient landscapes, productive land use and community-led environmental action.</p>
+            <div class="activity-photo-grid"><a href="gymphoto-02.jpg" target="_blank" rel="noopener"><img src="gymphoto-02.jpg" alt="Agroforestry Development project activity photo" loading="lazy"></a><a href="gymphoto-06.jpg" target="_blank" rel="noopener"><img src="gymphoto-06.jpg" alt="Agroforestry Development project activity photo" loading="lazy"></a><a href="gymphoto-07.jpg" target="_blank" rel="noopener"><img src="gymphoto-07.jpg" alt="Agroforestry Development project activity photo" loading="lazy"></a><a href="gymphoto-12.jpg" target="_blank" rel="noopener"><img src="gymphoto-12.jpg" alt="Agroforestry Development project activity photo" loading="lazy"></a></div>
+            <div class="activity-photo-label">4 photos from the GYM project gallery</div>
+            <button type="button" class="btn btn-outline-success rounded-pill" data-bs-toggle="modal" data-bs-target="#activityAgroforestry">Read More <i class="fas fa-arrow-right ms-1"></i></button>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="gym-activity-card">
+            <div class="activity-icon"><i class="fas fa-mountain"></i></div>
+            <h4>Soil Conservation & Regeneration</h4>
+            <p>Practical work that focuses on protecting soil, improving land condition and supporting healthy, productive agricultural fields.</p>
+            <div class="activity-photo-grid"><a href="gymphoto-03.jpg" target="_blank" rel="noopener"><img src="gymphoto-03.jpg" alt="Soil Conservation &amp; Regeneration project activity photo" loading="lazy"></a><a href="gymphoto-08.jpg" target="_blank" rel="noopener"><img src="gymphoto-08.jpg" alt="Soil Conservation &amp; Regeneration project activity photo" loading="lazy"></a><a href="gymphoto-09.jpg" target="_blank" rel="noopener"><img src="gymphoto-09.jpg" alt="Soil Conservation &amp; Regeneration project activity photo" loading="lazy"></a><a href="gymphoto-10.jpg" target="_blank" rel="noopener"><img src="gymphoto-10.jpg" alt="Soil Conservation &amp; Regeneration project activity photo" loading="lazy"></a><a href="gymphoto-14.jpg" target="_blank" rel="noopener"><img src="gymphoto-14.jpg" alt="Soil Conservation &amp; Regeneration project activity photo" loading="lazy"></a></div>
+            <div class="activity-photo-label">5 photos from the GYM project gallery</div>
+            <button type="button" class="btn btn-outline-success rounded-pill" data-bs-toggle="modal" data-bs-target="#activitySoil">Read More <i class="fas fa-arrow-right ms-1"></i></button>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="gym-activity-card">
+            <div class="activity-icon"><i class="fas fa-seedling"></i></div>
+            <h4>Organic & Sustainable Farming</h4>
+            <p>Farming practices presented through the project’s field activities, with attention to responsible resource use, soil health and sustainable food production.</p>
+            <div class="activity-photo-grid"><a href="gymphoto-13.jpg" target="_blank" rel="noopener"><img src="gymphoto-13.jpg" alt="Organic &amp; Sustainable Farming project activity photo" loading="lazy"></a><a href="gymphoto-15.jpg" target="_blank" rel="noopener"><img src="gymphoto-15.jpg" alt="Organic &amp; Sustainable Farming project activity photo" loading="lazy"></a><a href="gymphoto-16.jpg" target="_blank" rel="noopener"><img src="gymphoto-16.jpg" alt="Organic &amp; Sustainable Farming project activity photo" loading="lazy"></a><a href="gymphoto-17.jpg" target="_blank" rel="noopener"><img src="gymphoto-17.jpg" alt="Organic &amp; Sustainable Farming project activity photo" loading="lazy"></a><a href="gymphoto-18.jpg" target="_blank" rel="noopener"><img src="gymphoto-18.jpg" alt="Organic &amp; Sustainable Farming project activity photo" loading="lazy"></a><a href="gymphoto-19.jpg" target="_blank" rel="noopener"><img src="gymphoto-19.jpg" alt="Organic &amp; Sustainable Farming project activity photo" loading="lazy"></a></div>
+            <div class="activity-photo-label">6 photos from the GYM project gallery</div>
+            <button type="button" class="btn btn-outline-success rounded-pill" data-bs-toggle="modal" data-bs-target="#activityFarming">Read More <i class="fas fa-arrow-right ms-1"></i></button>
+          </div>
+        </div>
+
+      </div>
+      <div class="text-center mt-4">
+        <a href="#gym-gallery" class="btn btn-success rounded-pill px-4">View the Full GYM Photo Gallery <i class="fas fa-images ms-1"></i></a>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- GYM activity details -->
+<div class="modal fade activity-modal" id="activityEnvironmental" tabindex="-1" aria-labelledby="activityEnvironmentalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h4 class="modal-title" id="activityEnvironmentalLabel">Environmental Conservation</h4><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body">
+        <h5>What this activity focuses on</h5>
+        <p>Environmental conservation within the GYM project is about encouraging practical care for the natural environment and building community participation around responsible land and resource stewardship.</p>
+        <h5>Why it matters</h5>
+        <p>Healthy environments support communities, agriculture and livelihoods. Conservation also helps communities think beyond short-term activities and consider the long-term condition of the land and surrounding ecosystems.</p>
+        <h5>Project connection</h5>
+        <p>This activity complements the GYM project’s agriculture, agroforestry and soil-focused work. The field photographs in the project gallery provide visual documentation of the wider project activities and settings.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade activity-modal" id="activityAgroforestry" tabindex="-1" aria-labelledby="activityAgroforestryLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h4 class="modal-title" id="activityAgroforestryLabel">Agroforestry Development</h4><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body">
+        <h5>What this activity focuses on</h5>
+        <p>Agroforestry development brings trees and agricultural production together as part of a more resilient approach to land use. The activity emphasizes the role of trees within productive landscapes while keeping community needs and sustainable land management in view.</p>
+        <h5>Why it matters</h5>
+        <p>Well-managed trees can contribute to healthier landscapes, biodiversity and more diversified land-use systems. Agroforestry can also connect environmental stewardship with productive agriculture.</p>
+        <h5>Project connection</h5>
+        <p>Agroforestry is a central part of the GYM project identity and complements the project’s environmental conservation and soil regeneration activities.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade activity-modal" id="activitySoil" tabindex="-1" aria-labelledby="activitySoilLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h4 class="modal-title" id="activitySoilLabel">Soil Conservation &amp; Regeneration</h4><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body">
+        <h5>What this activity focuses on</h5>
+        <p>Soil conservation and regeneration focuses on protecting the productive base of agriculture while supporting the recovery and continued health of soils.</p>
+        <h5>Why it matters</h5>
+        <p>Healthy soils are important for sustainable food production and resilient agricultural systems. Keeping soil in good condition also supports responsible land management over time.</p>
+        <h5>Project connection</h5>
+        <p>This activity sits at the intersection of agriculture and environmental stewardship, linking the GYM project’s farming activities with its wider conservation and agroforestry work.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade activity-modal" id="activityFarming" tabindex="-1" aria-labelledby="activityFarmingLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h4 class="modal-title" id="activityFarmingLabel">Organic &amp; Sustainable Farming</h4><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body">
+        <h5>What this activity focuses on</h5>
+        <p>Organic and sustainable farming emphasizes responsible approaches to food production that consider soil health, resource use and the long-term sustainability of the farming system.</p>
+        <h5>Why it matters</h5>
+        <p>Sustainable farming can help communities think about productivity alongside the health of the land and the resources that future production depends on.</p>
+        <h5>Project connection</h5>
+        <p>This activity complements the GYM project’s agroforestry, environmental conservation and soil regeneration work, bringing the project’s environmental and agricultural themes together.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <section id="approach">
   <div class="container">
