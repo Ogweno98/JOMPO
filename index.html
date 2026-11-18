@@ -684,28 +684,33 @@
 <section id="jompo-fellowship-form" style="background:#f1f8f1; border-top:1px solid #dfeade;">
   <div class="container" style="max-width:820px;">
     <div class="text-center mb-4">
-      <span class="tag mb-2"><i class="fas fa-graduation-cap me-1"></i> Applications Open</span>
+      <span class="tag mb-2"><i class="fas fa-graduation-cap me-1"></i> Fully Funded &bull; Ages 18–30</span>
       <h2 class="section-title">JOMPO Training Fellowship</h2>
       <p class="section-lead mb-0">
-        Gain practical skills in sustainable agriculture, agro-forestry, green energy, and digital innovation (JOMPO AI &amp; CivicLens). Fill out this quick form to get onboarded into our next cohort.
+        A <strong>fully funded</strong> opportunity for <strong>youths aged 18–30</strong> across East Africa and beyond to gain practical skills in sustainable agriculture, agro-forestry, green energy, and digital innovation (JOMPO AI &amp; CivicLens). Fill out this 1-minute form to get onboarded.
       </p>
     </div>
 
     <div class="story-card">
-      <form action="https://formsubmit.co/info@jompo.co.ke" method="POST">
-        <input type="hidden" name="_subject" value="New JOMPO Training Fellowship Application">
+      <form action="https://formsubmit.co" method="POST">
+        <input type="hidden" name="_subject" value="New JOMPO Training Fellowship Application (18-30)">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
 
         <div class="row g-3">
-          <div class="col-12">
+          <div class="col-md-8">
             <label for="fellow_name" class="form-label fw-bold">Full Name *</label>
             <input type="text" class="form-control" id="fellow_name" name="Full Name" required placeholder="e.g. Jane Doe">
           </div>
 
+          <div class="col-md-4">
+            <label for="fellow_age" class="form-label fw-bold">Age (18–30 Only) *</label>
+            <input type="number" class="form-control" id="fellow_age" name="Age" min="18" max="30" required placeholder="e.g. 24">
+          </div>
+
           <div class="col-md-6">
-            <label for="fellow_phone" class="form-label fw-bold">Phone / WhatsApp Number *</label>
-            <input type="tel" class="form-control" id="fellow_phone" name="WhatsApp Number" required placeholder="e.g. 0712 345 678">
+            <label for="fellow_phone" class="form-label fw-bold">WhatsApp Number (Include Country Code) *</label>
+            <input type="tel" class="form-control" id="fellow_phone" name="WhatsApp Number" required placeholder="e.g. +254 712 345 678 / +256...">
           </div>
 
           <div class="col-md-6">
@@ -714,8 +719,8 @@
           </div>
 
           <div class="col-md-6">
-            <label for="fellow_location" class="form-label fw-bold">County &amp; Town / Sub-County *</label>
-            <input type="text" class="form-control" id="fellow_location" name="Location" required placeholder="e.g. Homa Bay / Oyugis">
+            <label for="fellow_location" class="form-label fw-bold">Country, County/Region &amp; Town *</label>
+            <input type="text" class="form-control" id="fellow_location" name="Location" required placeholder="e.g. Kenya, Homa Bay / Uganda, Kampala">
           </div>
 
           <div class="col-md-6">
@@ -760,7 +765,7 @@
           <div class="col-12 text-center mt-4">
             <div class="request-actions">
               <button type="submit" class="btn btn-lg fw-bold px-4" style="background:var(--green); color:#fff; border-radius:30px;">
-                <i class="fas fa-paper-plane me-2"></i>Join the JOMPO Fellowship
+                <i class="fas fa-paper-plane me-2"></i>Apply for Fully Funded Fellowship
               </button>
               <a href="mailto:info@jompo.co.ke?subject=JOMPO%20Training%20Fellowship%20Application" class="btn btn-outline-success fw-bold px-4 email-fallback" style="border-radius:30px;">
                 Open Email Instead
@@ -772,6 +777,7 @@
     </div>
   </div>
 </section>
+  
   
 <footer>
   <div class="container">
